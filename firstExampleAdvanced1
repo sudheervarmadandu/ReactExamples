@@ -1,0 +1,26 @@
+
+function Bello(props)
+{
+  
+  return <button onClick={()=>props.myClick(props.incrementBy)}>+{props.incrementBy}</button>;
+}
+
+function Display(props)
+{
+  return <div>{props.mymessage}</div>;
+}
+
+function App()
+{
+  const [num,numCounter]=useState(0);
+  const result=(incrBy)=> numCounter(num+incrBy);
+  
+  return  <>
+  <Bello myClick={result} incrementBy={10}/>
+    <Display mymessage={num} />
+    </>
+}
+ReactDOM.render(
+ <App/>,
+  document.getElementById('mountNode'),
+);
