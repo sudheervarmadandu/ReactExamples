@@ -1,0 +1,30 @@
+//ReactJS first example
+//You can run this example in https://jscomplete.com/playground/rgs1.1
+
+
+
+function Bello(props)
+{
+  
+  return <button onClick={props.myClick}>Hello</button>;
+}
+
+function Display(props)
+{
+  return <div>{props.mymessage}</div>;
+}
+
+function App()
+{
+  const [num,numCounter]=useState(0);
+  const result=()=> numCounter(num+1);
+  
+  return  <>
+  <Bello myClick={result}/>
+    <Display mymessage={num} />
+    </>
+}
+ReactDOM.render(
+ <App/>,
+  document.getElementById('mountNode'),
+);
